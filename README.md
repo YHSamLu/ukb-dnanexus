@@ -27,7 +27,7 @@ The vcf file of patients in your cohort should be in your folder.
 
 ANNOVAR is the basic annoation database that annotate all common variables: chromesome, start position, end position, reference, alternative, etc.
 
-```{bash}
+```{sh}
 # install annovar applications with the latest version
 
 wget http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/annovar.latest.tar.gz
