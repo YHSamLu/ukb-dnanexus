@@ -44,7 +44,17 @@ perl annovar/annotate_variation.pl -downdb -webfrom annovar -buildver hg38 human
 mkdir annovar_output
 for eid in  100001 100002 100003 100004; do
 
-    perl annovar/table_annovar.pl (your vcf folder)/${eid}_23141_0_0.g.vcf.gz annovar/humandb/ -buildver hg38 -out annovar_output/${eid} -remove -protocol ensGene -operation g -nastring . -vcfinput
+    perl annovar/table_annovar.pl ${eid}_23141_0_0.g.vcf.gz annovar/humandb/ \
+        -buildver hg38 \
+        -out ${eid} \
+        -remove \
+        -protocol ensGene \
+        -operation g \
+        -arg '-hgvs' \
+        -nastring . \
+        -vcfinput \
+        -polish \
+        -intronhgvs 10000
 
 
     rm -rf annovar_output/${eid}.avinput
